@@ -4,6 +4,7 @@ import com.sashqua.cinema.entity.Movie;
 import com.sashqua.cinema.entity.MovieShowing;
 import com.sashqua.cinema.entity.Ticket;
 import com.sashqua.cinema.service.MovieService;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -14,11 +15,11 @@ import java.util.List;
  * @Version 1.0
  * Created by Alexandr Shalukho.
  */
+@Service("movieService")
 public class MovieServiceImpl implements MovieService {
 
 
     public static List<Movie> movieList;
-//    public static List<>
 
     @Override
     public List<Movie> findAll(Integer hallId) {

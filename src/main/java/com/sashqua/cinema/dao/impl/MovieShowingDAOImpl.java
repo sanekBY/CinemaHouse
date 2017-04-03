@@ -5,6 +5,7 @@ import com.sashqua.cinema.entity.Movie;
 import com.sashqua.cinema.entity.MovieShowing;
 import com.sashqua.cinema.entity.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -18,8 +19,8 @@ import java.util.Properties;
  * @Version 1.0
  * Created by Alexandr Shalukho.
  */
+@Repository
 public class MovieShowingDAOImpl implements MovieShowingDAO {
-
 
     MovieDAOImpl movieDAO;
     Properties props;
@@ -57,7 +58,8 @@ public class MovieShowingDAOImpl implements MovieShowingDAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        return movieShowing;
+        if (movieShowing.getMovie() == null) return null;
+        else return movieShowing;
     }
 
     @Override

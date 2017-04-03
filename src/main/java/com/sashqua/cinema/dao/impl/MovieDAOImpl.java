@@ -4,6 +4,7 @@ import com.sashqua.cinema.dao.MovieDAO;
 import com.sashqua.cinema.dao.MovieShowingDAO;
 import com.sashqua.cinema.entity.Movie;
 import com.sashqua.cinema.entity.MovieShowing;
+import org.springframework.stereotype.Repository;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.util.Properties;
  * @Version 1.0
  * Created by Alexandr Shalukho.
  */
+@Repository
 public class MovieDAOImpl implements MovieDAO {
     Properties props = new Properties();
 

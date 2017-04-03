@@ -22,7 +22,7 @@ public class DaoImplTest {
         List<MovieShowing> movieShowings = new ArrayList<>();
         movieShowings.addAll(movieShowingDAO.findAll());
         MovieShowing movieShowing = new MovieShowing();
-        movieShowing = movieShowingDAO.getMovieShowing(1);
+        movieShowing = movieShowingDAO.getMovieShowing(3);
         System.out.println(movieShowings);
     }
 
