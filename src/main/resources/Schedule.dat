@@ -1,0 +1,10 @@
+movie.name.1 = "One"
+movie.agelimit.1 = 11
+movie.duration.1 = 11
+
+movie.name.2 = "Two"
+movie.agelimit.2 = 22
+movie.duration.2 = 22
+
+showing.movie.1 = 1
+showing.movie.2 = 2
