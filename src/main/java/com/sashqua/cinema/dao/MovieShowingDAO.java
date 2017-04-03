@@ -1,6 +1,7 @@
 package com.sashqua.cinema.dao;
 
 import com.sashqua.cinema.entity.MovieShowing;
+import com.sashqua.cinema.entity.Ticket;
 
 import java.util.List;
 

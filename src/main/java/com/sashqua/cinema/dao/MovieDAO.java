@@ -2,6 +2,8 @@ package com.sashqua.cinema.dao;
 
 import com.sashqua.cinema.entity.Movie;
 
+import java.util.List;
+
 /**
  * CinemaHouse project
  *
@@ -11,4 +13,5 @@ import com.sashqua.cinema.entity.Movie;
 public interface MovieDAO {
     public Movie getMovie(Integer id);
     public void setMovie(Movie movie);
+    public List<Movie> findAll();
 }

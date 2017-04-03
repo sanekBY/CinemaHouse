@@ -17,7 +17,6 @@ import java.util.List;
 public class MovieServiceImpl implements MovieService {
 
 
-    public static List<CinemaHall> cinemaHallList;
     public static List<Movie> movieList;
 //    public static List<>
 

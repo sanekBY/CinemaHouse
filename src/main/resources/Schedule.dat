@@ -1,3 +1,10 @@
+rows.num = 10
+seats.num = 20
+price = 100
+
+movie.num = 2
+showing.num = 2
+
 movie.name.1 = "One"
 movie.agelimit.1 = 11
 movie.duration.1 = 11
