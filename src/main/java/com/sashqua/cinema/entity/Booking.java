@@ -1,5 +1,7 @@
 package com.sashqua.cinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.List;
 
 /**

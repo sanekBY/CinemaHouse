@@ -1,5 +1,7 @@
 package com.sashqua.cinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class MovieShowing {
     private Integer id;
     private Movie movie;
     private Date dateOfShow;
+    @JsonBackReference
     private List<Ticket> allTickets;
     private List<Ticket> reservedTickets;
 

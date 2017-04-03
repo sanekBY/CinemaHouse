@@ -4,6 +4,7 @@ import com.sashqua.cinema.dao.BookingDAO;
 import com.sashqua.cinema.entity.Booking;
 import com.sashqua.cinema.entity.MovieShowing;
 import com.sashqua.cinema.entity.Ticket;
+import org.springframework.stereotype.Repository;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -19,6 +20,7 @@ import java.util.Properties;
  * @Version 1.0
  * Created by Alexandr Shalukho.
  */
+@Repository
 public class BookingDAOImpl implements BookingDAO {
 
     private Properties props;
@@ -32,7 +34,6 @@ public class BookingDAOImpl implements BookingDAO {
             FileInputStream in = new FileInputStream("src/main/resources/Booking.dat");
             props.load(in);
             in.close();
-            outputStream = new OutputStreamWriter(new FileOutputStream("src/main/resources/Booking.dat"), "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,6 +43,7 @@ public class BookingDAOImpl implements BookingDAO {
     @Override
     public void addBooking(Booking booking) {
         try {
+            outputStream = new OutputStreamWriter(new FileOutputStream("src/main/resources/Booking.dat"), "UTF-8");
             int num = Integer.valueOf(props.getProperty("booking.num"));
             props.setProperty("booking.num", String.valueOf(num+1));
 
@@ -50,6 +52,7 @@ public class BookingDAOImpl implements BookingDAO {
                 props.setProperty("booking.ticket." + (i+1) + "." + (num+1), String.valueOf(booking.getTickets().get(i).getId()));
             }
             props.store(outputStream, "");
+            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
