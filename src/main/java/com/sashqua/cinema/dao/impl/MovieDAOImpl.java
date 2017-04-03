@@ -28,8 +28,6 @@ public class MovieDAOImpl implements MovieDAO {
             FileInputStream in = new FileInputStream("src/main/resources/Schedule.dat");
             props.load(in);
             in.close();
-//            OutputStreamWriter outputStream = new OutputStreamWriter(new FileOutputStream("src/main/example.dat"), "UTF-8");
-//            props.setProperty("FIRST_NAME", String.valueOf(user.getFirstName()));
         } catch (IOException e) {
             e.printStackTrace();
         }
