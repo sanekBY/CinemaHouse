@@ -2,6 +2,7 @@ package com.sashqua.cinema.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
 public class Booking {
 
     private Integer id;
+    private Date date;
     private MovieShowing movieShowing;
     private List<Ticket> tickets;
 
@@ -38,5 +40,13 @@ public class Booking {
 
     public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

@@ -25,7 +25,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void deleteBooking(Integer id) {
-
+        bookingDAO.deleteBooking(id);
     }
 
     @Override

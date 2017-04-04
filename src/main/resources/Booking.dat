@@ -1,7 +1,22 @@
 #
-#Tue Apr 04 00:11:54 MSK 2017
-booking.ticket.1.2=23
-booking.ticket.1.1=23
-booking.num=2
-booking.showing.2=1
+#Tue Apr 04 13:49:54 MSK 2017
+booking.num=8
+booking.showing.8=1
+booking.showing.7=1
+booking.date.8=04-04-2017 13\:49\:54
+booking.showing.6=1
+booking.date.7=04-04-2017
+booking.showing.5=1
+booking.date.6=04-04-2017
+booking.showing.4=1
+booking.date.5=Tue Apr 04 13\:39\:48 MSK 2017
+booking.showing.3=1
+booking.date.4=null
 booking.showing.1=1
+booking.ticket.1.8=23
+booking.ticket.1.7=23
+booking.ticket.1.6=23
+booking.ticket.1.5=23
+booking.ticket.1.4=23
+booking.ticket.1.3=23
+booking.ticket.1.1=23

@@ -5,12 +5,10 @@ import com.sashqua.cinema.entity.MovieShowing;
 import com.sashqua.cinema.service.BookingService;
 import com.sashqua.cinema.service.MovieShowingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -20,6 +18,7 @@ import java.util.List;
  */
 @RestController
 public class CinemaController {
+
     @Autowired
     private final MovieShowingService movieShowingService;
     @Autowired
@@ -30,21 +29,40 @@ public class CinemaController {
         this.movieShowingService = movieShowingService;
         this.bookingService = bookingService;
     }
-
-
+    /**
+     * Get showing
+     */
     @RequestMapping(value = "/api/showing/{id}", method = {RequestMethod.GET})
     public MovieShowing getShowing(@PathVariable("id") Integer id) {
         return movieShowingService.getMovieShowing(id);
     }
-
+    /**
+     * Get all film showings
+     */
     @RequestMapping(value = "/api/showing-list" ,  method = {RequestMethod.GET})
     public List<MovieShowing> getShowingList() {
         return movieShowingService.findAll();
     }
-
+    /**
+     * Get booking info
+     */
     @RequestMapping(value = "/api/booking/{id}", method = {RequestMethod.GET})
     public Booking getBooking(@PathVariable("id") Integer id) {
         return bookingService.getBooking(id);
+    }
+    /**
+     * Booking tickets
+     */
+    @RequestMapping(value = "/api/booking}", method = RequestMethod.POST)
+    public void addBooking (@RequestBody @Valid final Booking booking) {
+        bookingService.addBooking(booking);
+    }
+    /**
+     * Delete tickets Booking
+     */
+    @RequestMapping(value = "/api/booking/{id}", method = {RequestMethod.DELETE})
+    public void deleteBooking(@PathVariable("id") Integer id) {
+        bookingService.deleteBooking(id);
     }
 
 

@@ -7,8 +7,16 @@ import com.sashqua.cinema.entity.Booking;
 import com.sashqua.cinema.entity.Movie;
 import com.sashqua.cinema.entity.MovieShowing;
 import com.sashqua.cinema.entity.Ticket;
+import com.sashqua.cinema.service.BookingService;
+import com.sashqua.cinema.service.impl.BookingServiceImpl;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +26,8 @@ import java.util.List;
  * @Version 1.0
  * Created by Alexandr Shalukho.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ComponentScan("com.sashqua.cinema.service.")
 public class DaoImplTest {
     @Test
     public void checkMovieShowingDao() {
@@ -46,6 +56,10 @@ public class DaoImplTest {
     }
 
 
+//    @Autowired
+//    public BookingService bookingService;
+
+
     @Test
     public void setBookingTest() {
         BookingDAOImpl bookingDAO = new BookingDAOImpl();
@@ -63,6 +77,16 @@ public class DaoImplTest {
         booking.setMovieShowing(movieShowing);
         booking.setTickets(tickets);
         bookingDAO.addBooking(booking);
+    }
+
+    @Test
+    public void deleteBookingTest() {
+        BookingDAOImpl bookingDAO = new BookingDAOImpl();
+//        bookingDAO.deleteBooking(2);
+     Booking booking = new Booking();
+        booking = bookingDAO.getBooking(8);
+        System.out.println(booking);
+
     }
 
 }
